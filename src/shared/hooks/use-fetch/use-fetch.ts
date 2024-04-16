@@ -1,19 +1,6 @@
 import { useNotificationStore } from '@store/notification';
 import { DependencyList, useEffect, useState } from 'react';
 
-type ApiRequest<R, I> = (data?: I) => Promise<R>;
-
-type ReturnType<R, I> = {
-  data: R | null;
-  loading: boolean;
-  error: Error | null;
-  fetchData: (data?: I) => void;
-};
-
-type RetryOptions = {
-  delay?: number;
-};
-
 const useFetch = <R, I>({
   apiRequest,
   onSuccess,
@@ -22,13 +9,13 @@ const useFetch = <R, I>({
   deps = [],
   fireOnload = true,
 }: {
-  apiRequest: ApiRequest<R, I>;
+  apiRequest: UseFetchTypes.ApiRequest<R, I>;
   onSuccess?: (response: R) => void;
   onError?: (error?: any) => void;
-  retryOptions?: RetryOptions;
+  retryOptions?: UseFetchTypes.RetryOptions;
   deps?: DependencyList;
   fireOnload?: boolean;
-}): ReturnType<R, I> => {
+}): UseFetchTypes.ReturnType<R, I> => {
   const { showNotification } = useNotificationStore();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);

@@ -1,8 +1,8 @@
 import { Container, Paper, Stack, Typography } from '@mui/material';
 import { getApiStarWarsPeople } from '@shared/api/get-api-star-wars-people.ts';
-import { Button } from '@shared/components/design-system/atoms/button';
+import { Button } from '@shared/components/design-system';
 import { PeopleCard } from '@shared/components/people-card';
-import { useFetch } from '@shared/hooks/use-fetch.ts';
+import { useFetch } from '@shared/hooks';
 import { useNotificationStore } from '@store/notification';
 import { type FC } from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -36,7 +36,7 @@ const AppPage: FC<Props> = ({ className }) => {
       </Helmet>
 
       <Container maxWidth="xl" className={className}>
-        <Paper sx={{ p: 2 }}>
+        <Paper sx={{ p: 2, height: '100vh' }}>
           <Typography
             variant="h4"
             sx={{ mb: 5, display: 'flex', justifyContent: 'center' }}

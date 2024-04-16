@@ -1,5 +1,5 @@
 import { Box, CircularProgress } from '@mui/material';
-import { Notification } from '@shared/components/design-system/molecules/notification';
+import { Notification } from '@shared/components/design-system';
 import { Suspense } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter } from 'react-router-dom';

@@ -1,9 +1,9 @@
 import { Box, Container, Typography } from '@mui/material';
-import { Button } from '@shared/components/design-system/atoms/button';
-import { RouterLink } from '@shared/components/design-system/atoms/router-link';
 import { HOME_PAGE } from '@shared/constants/routes.ts';
 import { reload } from '@shared/utils/reload.ts';
 import { Component, type PropsWithChildren } from 'react';
+
+import { Button, RouterLink } from './design-system';
 
 class ErrorBoundary extends Component<PropsWithChildren> {
   constructor(props) {

@@ -5,7 +5,7 @@ import {
   CardMedia,
   Typography,
 } from '@mui/material';
-import { Button } from '@shared/components/design-system/atoms/button';
+import { Button } from '@shared/components/design-system';
 import { type FC } from 'react';
 
 interface Props {
