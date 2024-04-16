@@ -80,7 +80,9 @@ const AppPage: FC<Props> = ({ className }) => {
               </Typography>
             ) : (
               <>
-                {data?.map((character) => <PeopleCard character={character} />)}
+                {data?.map((character) => (
+                  <PeopleCard key={character.name} character={character} />
+                ))}
               </>
             )}
           </Stack>
